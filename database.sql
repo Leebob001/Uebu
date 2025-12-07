@@ -1,0 +1,10 @@
+CREATE TABLE Q (
+    id INTEGER PRIMARY KEY,
+    chat TEXT NOT NULL
+);
+
+INSERT INTO EMPLOYEE VALUES (001,'How to make business.');
+INSERT INTO EMPLOYEE VALUES (002,'How to make money.');
+INSERT INTO EMPLOYEE VALUES (003,'How to make game.');
+
+SELECT * FROM Q WHERE id = 001;

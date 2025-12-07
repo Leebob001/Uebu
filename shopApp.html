@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <style>
+        #productImage1-1 {
+            margin: 20px;
+            width: 500px;
+            height: 940px;
+            border-radius: 10px;
+        }
+        #main {
+            position: absolute;
+            top: 70px;
+            left: 600px;
+            border: solid .5px;
+            width: 800px;
+            height: 840px;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 30px 0.5px #88888860;
+        }
+        #name {
+            margin: 30px;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #detail {
+            margin: 30px;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #image {
+            margin: 30px;
+            
+        }
+        #logo-2 {
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            border-radius: 100%;
+            
+        }
+        #title {
+            font-family: trebuchet ms;
+            font-size: 45px;
+        }
+        #send {
+            margin: 30px;
+            width: 500px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #support {
+            font-family: sans-serif;
+        }
+        #support2 {
+            text-decoration: none;
+        }
+        #support2:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <img src="" id="productImage1-1" class="productImage1-1">
+
+    <div id="main" class="main">
+        <img src="iconTest.jpg" id="logo-2" class="logo-2">
+
+        <form>
+            <h1 id="title" class="title">Welcome</h1>
+
+            <input type="text" name="name" id="name" class="name" placeholder="Name App" required><br>
+
+            <input type="text" name="detail" id="detail" class="detail" placeholder="Detail" required><br>
+
+            <input type="file" accept="image/*" id="image" class="image" required><br>
+
+            <button type="submit" id="send" class="send">Send</button>
+        </form>
+
+        <h3 id="support" class="support">Need help ? <a href="" id="support2" class="support2">Support</a> </h3>
+    </div>
+</body>
+</html>
