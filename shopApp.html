@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <style>
+        #productImage1-1 {
+            margin: 20px;
+            width: 500px;
+            height: 940px;
+            border-radius: 10px;
+        }
+        #main {
+            position: absolute;
+            top: 70px;
+            left: 600px;
+            border: solid .5px;
+            width: 800px;
+            height: 840px;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 30px 0.5px #88888860;
+        }
+        #name {
+            margin: 30px;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #detail {
+            margin: 30px;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #price-request {
+            margin: 30px;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #image {
+            margin: 30px;
+            
+        }
+        #logo-2 {
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            border-radius: 100%;
+            
+        }
+        #title {
+            font-family: trebuchet ms;
+            font-size: 45px;
+        }
+        #send {
+            margin: 30px;
+            width: 500px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #send:hover {
+            background-color: #88888860;
+        }
+        #support {
+            font-family: sans-serif;
+        }
+        #support2 {
+            text-decoration: none;
+        }
+        #support2:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <img src="" id="productImage1-1" class="productImage1-1">
+
+    <div id="main" class="main">
+        <img src="iconTest.jpg" id="logo-2" class="logo-2">
+
+        <form id="productForm">
+            <h1 id="title" class="title">Welcome</h1>
+
+            <input type="text" name="name" id="name" class="name" placeholder="Name App" required><br>
+
+            <input type="text" name="detail" id="detail" class="detail" placeholder="Detail" required><br>
+
+            <input type="text" id="price-request" class="price-request" placeholder="Expected price" required><br>
+
+            <input type="file" accept="image/*" id="image" class="image" required><br>
+
+            <button type="submit" id="send" class="send">Send</button>
+        </form>
+
+        <h3 id="support" class="support">Need help ? <a href="" id="support2" class="support2">Support</a> </h3>
+    </div>
+    <script>
+        document.getElementById('productForm').addEventListener('submit', async function(event) {
+            
+            event.preventDefault(); // หยุดการโหลดหน้าใหม่
+
+            const nameWeb = document.getElementById('name');
+            const Detail = document.getElementById('detail');
+            const Expected_price = document.getElementById('price-request');
+            const Image = document.getElementById('image');
+            
+            const name = nameWeb.value;
+            const detail = Detail.value;
+            const expected_price = Expected_price.value;
+            const image = Image.files[0];
+
+            console.log("hello"); // Log 1: ทำงานทันที
+
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('detail', detail);
+            formData.append('price', expected_price);
+            formData.append('image', image);
+
+            try {
+                const response = await fetch('http://127.0.0.1:5001/product', { 
+                    method: 'POST',
+                    body: formData
+                }); 
+
+                console.log('สถานะที่ได้รับ:', response.status); // Log 2: เมื่อเชื่อมต่อสำเร็จ
+                
+                // ✅ แก้ไข: เพิ่ม await หน้า response.text()
+                const result = await response.text();
+                console.log('ข้อมูลที่ได้รับจาก Server:', result); // Log 3: ผลลัพธ์จริง
+                
+                // ล้างค่าฟอร์ม
+                nameWeb.value = '';
+                Detail.value = '';
+                Expected_price.value = '';
+                Image.value = ''; 
+
+            } catch (error) {
+                console.error('Fetch error:', error); // Log 4: ถ้า Network มีปัญหา
+            }
+        });
+    </script>
+</body>
+</html>

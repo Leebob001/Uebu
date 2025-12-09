@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        #product-cart {
+            width: 800px;
+            height: 750px;
+            border: solid 0.5px;
+            position: absolute;
+            left: 350px;
+            top: 60px;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 30px 0.5px #88888860;
+            overflow: auto;
+        }
+        #total {
+            font-family: sans-serif;
+            position: absolute;
+            bottom: 100px;
+            left: 750px;
+        }
+        #price {
+            font-family: sans-serif;
+            position: absolute;
+            bottom: 103px;
+            left: 1000px;
+        }
+        #currency {
+            font-family: sans-serif;
+            position: absolute;
+            bottom: 103px;
+            left: 1080px;
+        }
+        #pay {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            border: solid 0.5px;
+            width: 650px;
+            height: 950px;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 30px 0.5px #88888860;
+        }
+        #name {
+            margin: 30px;
+            margin-top: 150px;
+            width: 580px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #id {
+            margin: 30px;
+            width: 580px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #date {
+            margin: 30px;
+            width: 580px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #cvv {
+            margin: 30px;
+            width: 580px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #title  {
+            font-family: trebuchet ms;
+            font-size: 45px;
+            text-align: center;
+        }
+        #checkout {
+            margin: 50px;
+            margin-top: 150px;
+            width: 550px;
+            height: 40px;
+            border-radius: 10px;
+            border: solid 2px #88888860;
+        }
+        #product-in1 {
+            /*display: none;*/
+            margin: 30px;
+            width: 730px;
+            height: 200px;
+            border: solid 0.5px;
+            border-radius: 10px;
+            box-shadow: 4px 4px #88888860;
+        }
+        #product-in1:hover {
+            box-shadow: 2px 2px #88888860;
+        }
+
+        #product-in2 {
+            /*display: none;*/
+            margin: 30px;
+            width: 730px;
+            height: 200px;
+            border: solid 0.5px;
+            border-radius: 10px;
+            box-shadow: 4px 4px #88888860;
+        }
+        #product-in2:hover {
+            box-shadow: 2px 2px #88888860;
+        }
+
+        #product-in3 {
+            /*display: none;*/
+            margin: 30px;
+            width: 730px;
+            height: 200px;
+            border: solid 0.5px;
+            border-radius: 10px;
+            box-shadow: 4px 4px #88888860;
+        }
+        #product-in3:hover {
+            box-shadow: 2px 2px #88888860;
+        }
+
+        #image-product1 {
+            margin: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+        }
+        #name-product1 {
+            margin: 20px;
+            position: absolute;
+            top: 20px;
+            left: 220px;
+            font-family: sans-serif;
+        }
+        #detail-product1 {
+            margin: 20px;
+            position: absolute;
+            top: 70px;
+            left: 350px;
+            font-family: sans-serif;
+            color: #4b4b4b;
+        }
+
+        #image-product2 {
+            margin: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+        }
+        #name-product2 {
+            margin: 20px;
+            position: absolute;
+            top: 255px;
+            left: 220px;
+            font-family: sans-serif;
+        }
+        #detail-product2 {
+            margin: 20px;
+            position: absolute;
+            top: 310px;
+            left: 350px;
+            font-family: sans-serif;
+            color: #4b4b4b;
+        }
+
+        #image-product3 {
+            margin: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+        }
+        #name-product3 {
+            margin: 20px;
+            position: absolute;
+            top: 488px;
+            left: 220px;
+            font-family: sans-serif;
+        }
+        #detail-product3 {
+            margin: 20px;
+            position: absolute;
+            top: 540px;
+            left: 350px;
+            font-family: sans-serif;
+            color: #4b4b4b;
+        }
+    </style>
+</head>
+<body>
+    <div id="product-cart" class="product-cart">
+        <div id="product-in1" class="product-in1">
+            <img src="" id="image-product1" class="image-product1">
+            <h1 id="name-product1" class="name-product1">Name product</h1>
+            <p id="detail-product1" class="detail-product1">Detail</p>
+        </div>
+        <div id="product-in2" class="product-in2">
+            <img src="" id="image-product2" class="image-product2">
+            <h1 id="name-product2" class="name-product2">Name product</h1>
+            <p id="detail-product2" class="detail-product2">Detail</p>
+        </div>
+        <div id="product-in3" class="product-in3">
+            <img src="" id="image-product3" class="image-product3">
+            <h1 id="name-product3" class="">Name product</h1>
+            <p id="detail-product3" class="detail-product3">Detail</p>
+        </div>
+    </div>
+    <h1 id="total" class="total"><strong>Total :</strong></h1>
+    <h2 id="price" class="price">0.00</h2>
+    <h2 id="currency" class="currency">Bath</h2>
+    <div id="pay" class="pay">
+        <h1 id="title" class="title">[Pay]</h1>
+        <form>
+            <input type="text" placeholder="Name on card" id="name" class="name" required>
+            <input type="tel" placeholder="Card number" maxlength="19" autocomplete="cc-number" pattern="[0-9\s]{13,19}" inputmode="numeric" id="id" class="id" required>
+            <input type="text" placeholder="MM/YYYY" maxlength="7" pattern="^(0[1-9]|1[0-2])\/([0-9]{4})$" id="date" class="date" required>
+            <input type="tel" placeholder="CVV" maxlength="3" id="cvv" class="cvv" inputmode="numeric" required>
+            <button type="submit" id="checkout" class="checkout" onclick="checkout(event)">Checkout</button required>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://cdn.omise.co/omise.js"></script>
+    <!--set omise and code-->
+    <script>
+        const name = document.getElementById("name");
+        const id = document.getElementById("id");
+        const date = document.getElementById("date");
+        const cvv = document.getElementById("cvv");
+        const submit = document.getElementById("checkout");
+        const amount = document.getElementById("price");
+        const priceButfloat = parseFloat(amount)
+        const price = Math.round(priceButfloat * 100);
+        const display = style.display;
+        const product1 = document.getElementById("product-in1");
+        const product2 = document.getElementById("product-in2");
+        const product3 = document.getElementById("product-in3");
+
+        if (window.getComputedStyle(product1).display === 'block') {
+            amount.innerHTML = price;
+        } else if (window.getComputedStyle(product2).display === 'block') {
+            amount.innerHTML = price * 2;
+        } else if (window.getComputedStyle(product3).display === 'block') {
+            amount.innerHTML = price * 3;
+        }
+
+        function checkout(event) {
+
+            event.preventDefault();
+
+            //ตั้งค่า Public Key ของ Omise
+            Omise.setPublicKey('pkey_test_65vvjtdlbc3i2j3bq47');
+
+            try {
+                // สร้าง Token จากข้อมูลบัตร
+                Omise.createToken({
+                'card_number': id.value,
+                'expiration_date': date.value,
+                'cardholder_name': name.value,
+                'security_code': cvv.value,
+                }, function(statusCode, response) {
+                    
+                });
+
+                // ✅ โค้ด fetch API: POST และส่ง JSON body
+                fetch('http://127.0.0.1:5001/pay', { 
+                    method: 'POST',
+                    headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    body: JSON.stringify({ 
+                        omiseToken: response.id,
+                        amount: price
+                    })
+                });
+
+                if (response.object == 'token') {
+                    // ได้รับ Token แล้ว นำไปส่งให้เซิร์ฟเวอร์ร้านค้า
+                    console.log('Token:', response.id);
+                    // ส่ง response.id ไปยัง back-end ของคุณ
+                } else {
+                    // เกิดข้อผิดพลาด
+                    console.log('Error:', response.message);
+                }
+
+                const data = response.json();
+
+            } catch (error) {
+                console.error("Error: ", error);
+            }
+        }
+    </script>
+</body>
+</html>
